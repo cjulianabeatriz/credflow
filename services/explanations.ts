@@ -1,11 +1,11 @@
 export function gerarExplicacoes({
-  renda,
-  dividas,
+  income,
+  debts,
 }: {
-  renda: number;
-  dividas: number;
+  income: number;
+  debts: number;
 }) {
-  const comprometimento = dividas / renda;
+  const comprometimento = debts / income;
 
   const mensagens = [];
 
@@ -17,7 +17,7 @@ export function gerarExplicacoes({
     mensagens.push("Seu controle de dívidas é positivo.");
   }
 
-  if (renda < 2000) {
+  if (income < 2000) {
     mensagens.push("Sua renda pode limitar seu acesso ao crédito.");
   }
 

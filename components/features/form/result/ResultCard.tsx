@@ -4,20 +4,19 @@ import { gerarSugestoes } from "@/services/suggestions";
 
 interface Props {
   score: number;
-  renda: number;
-  dividas: number;
+  income: number;
+  debts: number;
 }
 
-export default function ResultCard({ score, renda, dividas }: Props) {
+export default function ResultCard({ score, income, debts }: Props) {
   const info = interpretarScore(score);
-  const explicacoes = gerarExplicacoes({ renda, dividas });
+  const explicacoes = gerarExplicacoes({ income, debts });
   const sugestoes = gerarSugestoes(score);
 
   const percentage = (score / 1000) * 100;
 
   return (
     <div className="space-y-6 mt-6">
-      {/* SCORE */}
       <div className="card-base space-y-4">
         <p className="text-sm text-muted-foreground">Seu score</p>
 
