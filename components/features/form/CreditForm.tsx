@@ -15,6 +15,7 @@ import StepFinancial from "./StepFinancial";
 import StepProfessional from "./StepProfessional";
 import ResultCard from "./result/ResultCard";
 import { CreditFormData, creditSchema } from "@/types/credit";
+import Link from "next/link";
 
 export default function CreditForm() {
   const [step, setStep] = useState(1);
@@ -167,11 +168,11 @@ export default function CreditForm() {
             Continuar
           </Button>
         ) : (
-          <Button
-            type="submit"
-            className="flex-1 h-12 rounded-xl"
-          >
+          <Button type="submit"
+            className="flex-1 h-12 rounded-xl"> 
+          <Link href="/dashboard">
             Analisar crédito
+            </Link>
           </Button>
         )}
       </div>

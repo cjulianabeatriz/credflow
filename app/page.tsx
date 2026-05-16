@@ -15,7 +15,8 @@ export default function Home() {
           width={150} 
           height={50}
           priority 
-          className="mb-8" 
+          className="mb-8"
+          loading="eager"
         />
         
         <Image 
@@ -24,6 +25,7 @@ export default function Home() {
           width={800} 
           height={400}
           className="w-full h-auto rounded-lg"
+          loading="eager"
         />
 
         <div className="flex flex-col mb-6">
