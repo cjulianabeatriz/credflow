@@ -1,24 +1,76 @@
+import Container from '@/components/layout/Container';
+import { Card } from '@/components/ui/card';
+import { CreditScoreGauge } from './Chart/page';
+import { ScoreFactors } from './ScoreFactors/page';
+import { ScoreAnalysis } from './ScoreAnalysis/page';
 
-import Container from "@/components/layout/Container";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+const userScore = 820;
+
+const user = {
+  name: 'Juliana',
+};
 
 export default function Dashboard() {
+  const getScoreBadge = (score: number) => {
+    if (score < 500) {
+      return {
+        label: 'Baixo',
+        className:
+          'bg-red-500/10 text-red-500 border border-red-500/20 shadow-sm shadow-red-500/10',
+      };
+    }
+
+    if (score < 700) {
+      return {
+        label: 'Regular',
+        className:
+          'bg-amber-500/10 text-amber-500 border border-amber-500/20 shadow-sm shadow-amber-500/10',
+      };
+    }
+
+    if (score < 850) {
+      return {
+        label: 'Muito Bom',
+        className:
+          'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shadow-sm shadow-emerald-500/10',
+      };
+    }
+
+    return {
+      label: 'Excelente',
+      className:
+        'bg-green-500/10 text-green-500 border border-green-500/20 shadow-sm shadow-green-500/10',
+    };
+  };
+
+  const scoreBadge = getScoreBadge(userScore);
+
   return (
     <Container>
       <div>
-            <h1 className="text-2xl font-bold">Olá, Juliana! </h1>
-            <span>aqui está sua análise financeira</span>
-            </div>
-             <Card className="w-full max-w-sm">
-              <div >
-                <h2 className="text-lg font-semibold">Score CredFlow</h2>
-                <h1 className="text-3xl font-bold">850</h1> 
-                <span>pontos</span>
-              </div>
-              <Badge>Perfil: Baixo risco</Badge>
-              <span>Seu score está ótimo! Isso indica uma boa saúde financeira.</span>
-             </Card>
+        <h1 className="text-2xl font-bold tracking-tight ">
+          Olá, {user.name}! 👋
+        </h1>
+
+        <span className="text-muted-foreground">
+          Aqui está sua análise financeira
+        </span>
+      </div>
+
+      <Card className="w-full p-5 rounded-3xl border border-border/60 shadow-sm lg:flex-row">
+        <div>
+          <ScoreAnalysis />
+          <div className="mt-6">
+            <CreditScoreGauge userScore={userScore} scoreBadge={scoreBadge} />
+          </div>
+        </div>
+      </Card>
+
+      <Card>
+        <div className="mt-6 lg:mt-0 lg:ml-6">
+          <ScoreFactors />
+        </div>
+      </Card>
     </Container>
   );
 }
