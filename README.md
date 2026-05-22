@@ -1,6 +1,28 @@
 # CredFlow
 
+# CredFlow
+
 Plataforma de simulação e análise de crédito pessoal.
+
+## 🗺️ Arquitetura e Mapa do Sistema (Sitemap)
+
+```mermaid
+graph TD
+    A[ /auth ] --> A1[ /login ]
+    A[ /auth ] --> A2[ /register ]
+    A[ /auth ] --> A3[ /onboarding ]
+
+    B[ /dashboard ] --> B1[ Cards: Score & Perfil ]
+    B[ /dashboard ] --> B2[ Gráfico: Entradas vs Saídas ]
+
+    C[ /analise-credito ] --> C1[ Aba: Fatores de Impacto ]
+    C[ /analise-credito ] --> C2[ Aba: Evolução do Score ]
+
+    D[ /fluxo-caixa ] --> D1[ Calendário de Recebíveis ]
+    D[ /fluxo-caixa ] --> D2[ Análise de Volatilidade ]
+
+    E[ /simulador ] --> E1[ Sliders Dinâmicos ]
+    E[ /simulador ] --> E2[ Stress Test de Renda ]
 
 ## Estrutura do Monorepo
 
