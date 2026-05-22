@@ -1,7 +1,5 @@
 # CredFlow
 
-# CredFlow
-
 Plataforma de simulação e análise de crédito pessoal.
 
 ## 🗺️ Arquitetura e Mapa do Sistema (Sitemap)
