@@ -23,7 +23,8 @@ graph TD
 
     E[ /simulador ] --> E1[ Sliders Dinâmicos ]
     E[ /simulador ] --> E2[ Stress Test de Renda ]
-
+    
+```
 ## Estrutura do Monorepo
 
 ```
